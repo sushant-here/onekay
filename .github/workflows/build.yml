@@ -1,4 +1,4 @@
-name: Testflight dist
+name: Build
 
 on:
   push:
