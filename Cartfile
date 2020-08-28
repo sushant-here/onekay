@@ -1,0 +1,10 @@
+# carthage update --platform iOS --no-use-binaries --cache-builds
+
+# Firebase:... https://firebaseopensource.com/projects/firebase/firebase-ios-sdk/carthage/
+binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseAnalyticsBinary.json"
+binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseProtobufBinary.json"
+binary "https://dl.google.com/dl/firebase/ios/carthage/FirebasePerformanceBinary.json"
+binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseCrashlyticsBinary.json"
+
+github "SnapKit/SnapKit"
+github "malcommac/SwiftRichString"

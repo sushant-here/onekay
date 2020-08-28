@@ -1,0 +1,6 @@
+binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseAnalyticsBinary.json" "6.31.0"
+binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseCrashlyticsBinary.json" "6.31.0"
+binary "https://dl.google.com/dl/firebase/ios/carthage/FirebasePerformanceBinary.json" "6.31.0"
+binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseProtobufBinary.json" "6.31.0"
+github "SnapKit/SnapKit" "5.0.1"
+github "malcommac/SwiftRichString" "3.7.2"
