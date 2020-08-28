@@ -1,4 +1,5 @@
-![Piggy Bank](money.svg)
+<img alt="Piggy Bank" src="money.svg" width="250">
+
 # OneKay
 Fun side project
 
