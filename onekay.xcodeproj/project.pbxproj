@@ -34,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		85319B0624F9204000379C62 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		85319B0724F922F000379C62 /* money.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = money.svg; sourceTree = "<group>"; };
 		8543A6DA24F00277006E42BC /* onekay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = onekay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8543A6DD24F00277006E42BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8543A6DF24F00277006E42BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,8 @@
 		8543A6D124F00277006E42BC = {
 			isa = PBXGroup;
 			children = (
+				85319B0624F9204000379C62 /* README.md */,
+				85319B0724F922F000379C62 /* money.svg */,
 				8543A6DC24F00277006E42BC /* onekay */,
 				8543A6F324F0027B006E42BC /* onekayTests */,
 				8543A6FE24F0027B006E42BC /* onekayUITests */,
