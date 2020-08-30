@@ -64,6 +64,7 @@ jobs:
         bundle exec fastlane ios archive
       env: 
         MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }} #base64("<Github username>:<Github Personal Access Token>")
+        MATCH_GIT_URL: ${{ secrets.MATCH_GIT_URL }}
         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
 
     - uses: actions/upload-artifact@v2
