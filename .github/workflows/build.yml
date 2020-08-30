@@ -80,7 +80,6 @@ jobs:
         path: ./*.dSYM.zip
 
     - name: Upload build to testflight
-      continue-on-error: true
       run: |
         bundle exec fastlane ios testflight_upload
       env: 
