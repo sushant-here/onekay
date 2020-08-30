@@ -35,3 +35,6 @@ jobs:
 
     - name: Install dependencies with Carthage
       run: carthage bootstrap --platform iOS --no-use-binaries --cache-builds
+
+    - name: Build app
+      run: bundle exec fastlane ios build

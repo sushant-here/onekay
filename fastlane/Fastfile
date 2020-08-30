@@ -1,0 +1,86 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Builds the app"
+  lane :build do
+    build_app(
+      scheme: "onekay",
+      skip_codesigning: true,
+      skip_package_ipa: true
+    )
+  end
+
+  desc "Runs all unit tests on the app"
+  lane :tests do
+    run_tests(
+      derived_data_path: "fastlane/build",
+      scheme: "onekay",
+      code_coverage: true,
+      clean: true
+    )
+
+    xcov(
+      scheme: "onekay",
+      derived_data_path: "fastlane/build",
+      output_directory: "fastlane/code_coverage"
+    )
+  end
+
+  desc "Increment the build nubmer to the latest in testflight + 1"
+  lane :testflight_increment_build_number do
+    increment_build_number({
+      build_number: latest_testflight_build_number + 1
+    })
+  end
+
+  desc "Build and archive"
+  lane :archive do
+    setup_temporary_keychain()
+    build()
+    delete_temporary_keychain()
+  end
+
+  desc "Upload to apple"
+  lane :testflight_upload do
+    upload_to_testflight(
+      skip_submission: true,
+      skip_waiting_for_build_processing: true)
+  end
+
+  desc "sets up a temporary keychain"
+  private_lane :setup_temporary_keychain do
+    keychain_name = "fastlane.keychain"
+    ENV["MATCH_KEYCHAIN_NAME"] = keychain_name
+    create_keychain(
+      name: keychain_name,
+      password: "",
+      unlock: true,
+      timeout: false,
+      lock_when_sleeps: true
+    )
+    sync_code_signing(type: "development", keychain_name: keychain_name, readonly: true)
+    sync_code_signing(type: "appstore", keychain_name: keychain_name, readonly: true)
+  end
+
+  desc "deletes the temporary keychain"
+  private_lane :delete_temporary_keychain do
+    delete_keychain(
+      name: ENV["MATCH_KEYCHAIN_NAME"]
+    )
+  end
+end
