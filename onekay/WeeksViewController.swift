@@ -58,4 +58,3 @@ class WeeksViewController: UICollectionViewController, UICollectionViewDelegateF
 
     }
 }
-
