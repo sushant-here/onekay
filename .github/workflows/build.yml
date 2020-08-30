@@ -48,7 +48,7 @@ jobs:
       run: bundle exec fastlane ios tests
 
     - uses: actions/upload-artifact@v2
-      name: Publish output
+      name: Publish test results
       with:
         name: test output
         path: fastlane/test_output/
@@ -60,7 +60,6 @@ jobs:
         path: fastlane/code_coverage/
 
     - name: Build and archive
-      continue-on-error: true
       run: |
         bundle exec fastlane ios archive
       env: 
@@ -70,14 +69,14 @@ jobs:
     - uses: actions/upload-artifact@v2
       name: Publish ipa
       with:
-        name: order.ipa
-        path: order.ipa
+        name: App build file (ipa)
+        path: ./*.ipa
 
     - uses: actions/upload-artifact@v2
       name: Publish dsym
       with:
-        name: order.app.dSYM.zip
-        path: order.app.dSYM.zip
+        name: App build symbols (DSYM)
+        path: ./*.dSYM.zip
 
     - name: Upload build to testflight
       continue-on-error: true
